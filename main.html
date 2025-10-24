@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My Art GAMIFIED</title>
+  <script src="script1.js" defer></script>
+  <link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+
+<!-- Start the grid layout -->
+<div class="grid-container">
+  <!-- Title of page -->
+  <div class="item1">
+	<h1 id="title">MY ART GAMIFIED</h1>
+  </div>
+  <!-- Hamster and progress -->
+  <div class="item2">
+	  <img src="chubby_cheeked_hamster.jpg" alt="Picture of a hamster in front of red background." width=100% id="hamsterPic">
+    <p id="lvl"></p>
+    <div class="progress-bar">
+      <div id="progress" class="progress"></div>
+    </div>
+    <p id="xpProgress"></p>
+    <br>
+    <br>
+    <div>
+      <img src="treasure_chest.png" alt="Treasure chest." width=70% id="treasureChest" class="center">
+      <p id="rewardAt">Next reward in: XP</p>
+    </div>
+  </div>
+  <!-- Column farthest to the left -->
+  <div class="item3" style="padding: 5px;">
+    <!-- Course overview -->
+    <h2 title="Courses in progress. Click for course site."><a href="courses.html" class="headerLink">Courses</a></h2>
+    <hr>
+    <div id="" style="overflow-y:auto; height:25%; padding:0; margin: 0;">
+    <p>What's this?</p>
+    <p>More paragraph</p>
+
+    </div>
+    <!-- Project overview -->
+    <h2 title="Click to see previous projects."><a href="previousProjects.html" class="headerLink">Projects</a></h2>
+    <hr>
+    <div id="" style="overflow-y:auto; height:25%; padding:0; margin: 0;">
+    <p>Webpage</p>
+    <p>Watercolor feather</p>
+    </div>
+  </div>  
+  <!-- Middle column -->
+  <div class="item4">
+    <!-- XP menu -->
+    <div>
+	  <h2>XP Menu</h2>
+    <p id="tester1"></p>
+    <table class="xp_menu">
+      <tr>
+        <td>Fill 10 pages </td>
+        <td><button type="button" onclick="addXP(20)">20 XP</button></td>
+        <td>Start any piece </td>
+        <td><button type="button" onclick="addXP(5)">5 XP</button></td>
+      </tr>
+      <tr>
+        <td>Finish watercolor piece </td>
+        <td><button type="button" onclick="addXP(20)">20 XP </button></td>
+        <td>Hang piece </td>
+        <td><button type="xp_button" onclick="addXP(10)">10 XP </button></td>
+      </tr>
+      <tr>
+        <td>Redraw/improve drawing</td>
+        <td><button type="button" onclick="addXP(10)">10 XP</button></td>
+        <td>Finish sketchbook</td>
+        <td><button type="button" onclick="addXP(50)">50 XP</button></td>
+      </tr>
+      <tr>
+        <td>Complete season goal</td>
+        <td><button type="button" onclick="addXP(10)">10 XP</button></td>
+        <td>Challenge</td>
+        <td>***</td>
+      </tr>
+    </table>
+    <br>
+    <table class="xp_menu">
+      <tr>
+        <!-- Gods awful &nbsp ik. But meh -->
+        <td>Weekly goal met &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </td>
+        <td><button type="button" onclick="addXP(10)">10 XP</button></td>
+        <td>Streak bonus* &nbsp; &nbsp; &nbsp;</td>
+        <td><button type="button" onclick="addXP(25)">25 XP</button></td>
+      </tr>
+    </table>
+    <p>Remove XP</p>
+    <input type="text" id="minusXP" placeholder="Enter a number" maxlength="3"/>
+    <button type="button" onclick="removeXP()">Submit</button>
+    </div>
+    <!-- Season goals -->
+    <div>
+      <h2>Season goals</h2>
+    </div>
+  </div>
+
+</div>
+
+<script>  
+let level = localStorage.getItem('level') || 0;
+
+document.getElementById('lvl').innerHTML = `<p>Lvl. ${level}</p>`;
+</script>
+
+
+</body>
+</html>
