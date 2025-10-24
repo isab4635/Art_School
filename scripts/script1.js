@@ -109,4 +109,5 @@ function levelUp() {
 function levelDown() {
     currentLevel = levels[currentLevel['level']-1];
     document.getElementById('lvl').innerHTML = `<p>Lvl. ${currentLevel['level']}</p>`; 
+
 }
